@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  horas: 1
+  incidencia: MyString
+  observaciones: MyText
+
+two:
+  horas: 1
+  incidencia: MyString
+  observaciones: MyText

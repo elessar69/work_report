@@ -1,0 +1,43 @@
+<%= form_for(@cliente) do |f| %>
+  <% if @cliente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
+
+      <ul>
+      <% @cliente.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="form-actions">
+<blockquote class="pull-left">
+  <p> usuario: </p>
+  <small> <%= current_user.username %> </small>
+</blockquote>
+</div>
+
+
+ <div class="row">   
+    <div class="span3 offset1">
+    <label>Nombre del cliente</label>
+    <% f.label :nombre_cliente %>
+    <%= f.text_field :nombre_cliente %></div>
+    <div class="span3">
+    <label>Dirección de servicio</label>
+    <% f.label :direccion_servicio %>
+    <%= f.text_field :direccion_servicio %></div>
+ </div>
+
+
+<div class="form-actions">
+<div class="row">
+ <div class="span1 offset1">
+ <%= link_to 'Atrás', clientes_path, :class => "btn" %></div>
+ <div class="span1">
+ <button class="btn btn-primary" type="submit">Aceptar</button></div>
+</div>
+</div>
+
+<% end %>

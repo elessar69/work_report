@@ -1,0 +1,120 @@
+<%= form_for(@jornada) do |f| %>
+  <% if @jornada.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@jornada.errors.count, "error") %> prohibited this jornada from being saved:</h2>
+
+      <ul>
+      <% @jornada.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="form-actions">
+<blockquote class="pull-left">
+  <p> usuario: </p>
+  <small> <%= current_user.username %> </small>
+</blockquote>
+</div>
+    
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery UI Datepicker - Default functionality</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css" />
+  <script>
+  $(function() {
+    $("#jornada_fecha" ).datepicker({ showWeek: true, firstDay: 1 });
+    $( "#jornada_fecha" ).datepicker( "option", "showAnim", "slideDown" );
+    $( "#jornada_fecha" ).datepicker("option", $.datepicker.regional["es"] );
+  });
+  // Traducción al español
+$(function($){
+    $.datepicker.regional['es'] = {
+        closeText: 'Cerrar',
+        prevText: '<Ant',
+        nextText: 'Sig>',
+        currentText: 'Hoy',
+        monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+        dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+        dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+        weekHeader: 'Sm',
+        dateFormat: 'dd/mm/yy',
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+        yearSuffix: ''
+    };
+    $.datepicker.setDefaults($.datepicker.regional['es']);
+});
+  </script>
+</head>
+
+
+
+
+  <div class="row">
+    <div class="span3 offset1">
+    <label>Usuario</label>
+    <% f.label :usuario %>
+    <% if current_user.derechos == true then %>
+    <%= f.collection_select :usuario_id, Usuario.all, :id, :username, :prompt => 'Selecciona operario' %>
+    <% else %> 
+    <%= f.collection_select :usuario_id, Usuario.all, :id, :username, :value => current_user.username ,  :html=>{:disabled=>true} %>
+     <% end %></div>
+    <div class="span3">
+    <label>Cliente</label>
+    <% f.label :cliente %>
+    <%= f.collection_select :cliente_id, Cliente.all, :id, :nombre_cliente, :prompt => "Selecciona el cliente" %></div>
+    <div class="span1">
+    <center>
+    <label>310</label>
+    <% f.label :pilar %>
+    <%= f.radio_button :pilar, '310' %></div></center>
+    <div class="span1">
+    <center>
+    <label>312</label>
+    <% f.label :pilar %>
+    <%= f.radio_button :pilar, '312' %></div></center>
+    <div class="span3">
+    <label>Horas</label>
+    <% f.label :horas %>
+    <%= f.number_field :horas %></div>
+    <div class="span3">
+    <label>Incidencia</label>
+    <% incidencias = {'' => '', 'Baja Enfermedad' => 'BE', 'Baja Accidente' => 'BA', 'Permiso Pagado' => 'PP', 'Ausencia No Justificada' => 'AN', 'Permiso a Descontar' => 'PD' } %>
+    <% lista = incidencias.sort %>
+    <%= f.select :incidencia, lista %></div>
+  </div>
+
+ <div class="row">
+    <div class="span3 offset1">
+    <label>Fecha</label>
+    <% f.label :fecha %>
+    <%= f.text_field :fecha %></div>
+    <div class="span3">
+    <label>Observaciones</label>
+    <% f.label :observaciones %>
+    <%= f.text_area :observaciones , :rows => "1" %></div>
+</div>
+
+
+
+
+<div class="form-actions">
+<div class="row">
+ <div class="span1 offset1">
+ <%= link_to 'Atrás', jornadas_path, :class => "btn" %></div>
+ <div class="span1">
+ <button class="btn btn-primary" type="submit">Aceptar</button></div>
+</div>
+</div>
+
+<% end %>

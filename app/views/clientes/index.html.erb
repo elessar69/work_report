@@ -1,0 +1,42 @@
+<div class="form-actions">
+<blockquote class="pull-left">
+  <p> usuario: </p>
+  <small> <%= current_user.username %> </small>
+</blockquote>
+<h1 class='pull-right'>Clientes</h1>
+</div>
+
+
+<table class="table table-striped table-bordered table-condensed">
+  <tr>
+    <th>Nombre del cliente</th>
+    <th>Dirección de servicio</th>
+    <th></th>
+  </tr>
+
+<% @clientes.each do |cliente| %>
+  <tr>
+    <td><%= cliente.nombre_cliente %></td>
+    <td><%= cliente.direccion_servicio %></td>
+    <td><%= link_to edit_cliente_path(cliente) do %>
+                 <i class="icon-pencil"></i>
+          <% end %>
+
+        <%= link_to  cliente, method: :delete, data: { confirm: '¿Está seguro?' } do 
+          %>
+                 <i class="icon-trash"></i>
+          <% end %>
+
+    </td>
+  </tr>
+<% end %>
+</table>
+
+
+<div class="form-actions">
+<div class="row">
+ <div class="span2 offset1">
+ <%= link_to 'Nuevo cliente', new_cliente_path, :class => "btn" %></div>
+</div>
+</div>
+

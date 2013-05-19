@@ -1,0 +1,51 @@
+<div class="form-actions">
+<blockquote class="pull-left">
+  <p> usuario: </p>
+  <small> <%= current_user.username %> </small>
+</blockquote>
+<h1 class='pull-right'>Usuarios</h1>
+</div>
+
+
+<table table class="table table-striped table-bordered table-condensed">
+  <tr>
+
+    <th>Nombre</th>
+    <th>Primer apellido</th>
+    <th>Segundo apellido</th>
+    <th>Nº empleado</th>
+    <th>Unidad</th>
+    <th>Gestor</th>
+    <th>Privilegios</th>
+    <th></th>
+  </tr>
+
+<% @usuarios.each do |usuario| %>
+  <tr>
+
+    <td><%= usuario.nombre %></td>
+    <td><%= usuario.apellido1 %></td>
+    <td><%= usuario.apellido2 %></td>
+    <td><%= usuario.numero_empleado %></td>
+    <td><%= usuario.unidad %></td>
+    <td><%= usuario.gestor %></td>
+    <td><%= usuario.derechos %></td>
+    <td>
+      <%= link_to edit_usuario_path(usuario) do %>
+                 <i class="icon-pencil"></i>
+          <% end %>
+        <%= link_to  usuario, method: :delete, data: { confirm: '¿Está seguro?' } do 
+          %>
+                 <i class="icon-trash"></i>
+          <% end %></td>
+  </tr>
+<% end %>
+</table>
+
+
+<div class="form-actions">
+<div class="row">
+ <div class="span2 offset1">
+<%= link_to 'Nuevo usuario', new_usuario_path, :class => "btn" %></div>
+</div>
+</div>

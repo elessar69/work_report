@@ -1,0 +1,27 @@
+<%= form_tag usuario_sessions_path, method: :post do %>
+
+
+<div class="row">
+    <div class="span4 offset1">
+    <label>Nombre de usuario</label>
+    <% label_tag :username %>
+    <%= text_field_tag :username %></div>
+</div>
+
+ <div class="row">
+    <div class="span 4 offset1">
+    <label>Password</label>
+    <% label_tag :password %>
+    <%= password_field_tag :password %>  </div>
+</div>
+
+
+<div class="form-actions">
+<div class="row">
+ <div class="span2 offset1">
+<button class="btn btn-primary" type="submit">Registrarse</button></div>
+</div>
+</div>
+
+
+  <% end %>

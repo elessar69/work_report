@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre_cliente: MyString
+  direccion_servicio: MyString
+
+two:
+  nombre_cliente: MyString
+  direccion_servicio: MyString

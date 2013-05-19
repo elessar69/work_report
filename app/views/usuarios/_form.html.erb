@@ -1,0 +1,89 @@
+<%= form_for(@usuario) do |f| %>
+  <% if @usuario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@usuario.errors.count, "error") %> prohibited this usuario from being saved:</h2>
+
+      <ul>
+      <% @usuario.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="form-actions">
+<blockquote class="pull-left">
+  <p> usuario: </p>
+  <small> <%= current_user.username %> </small>
+</blockquote>
+</div>
+
+
+
+  <div class="row">
+    <div class="span3 offset1">
+    <label>Nombre</label>
+    <% f.label :nombre %>
+    <%= f.text_field :nombre %></div>
+    <div class="span3">
+    <label>Primer Apellido</label>
+    <% f.label :apellido1 %>
+    <%= f.text_field :apellido1 %></div>
+    <div class="span3">
+    <label>Segundo Apellido</label>
+    <% f.label :apellido2 %>
+    <%= f.text_field :apellido2 %></div>
+    <div class="span3">
+    <label>DNI</label>
+    <% f.label :dni %>
+    <%= f.text_field :dni %></div>
+    <div class="span3">    
+    <label>Nº empleado</label>
+    <% f.label :numero_empleado %>
+    <%= f.text_field :numero_empleado %></div>
+  </div>
+
+ <div class="row">   
+    <div class="span3 offset1">
+    <label>eMail</label>
+    <% f.label :email %>
+    <%= f.text_field :email %></div>
+    <div class="span3">
+    <label>Unidad</label>
+    <% f.label :unidad %>
+    <%= f.text_field :unidad %></div>
+    <div class="span3">
+    <label>Gestor</label>
+    <% f.label :gestor %>
+    <%= f.text_field :gestor %></div>
+    <div class="span3">
+    <label>Privilegios</label>
+    <% f.label :derechos %>
+    <%= f.check_box :derechos %></div>
+ </div>
+
+  <div class="row"> 
+    <div class="span3 offset1">
+    <label>Nombre de usuario</label>
+    <% f.label :username %>
+    <%= f.text_field :username %></div>
+    <div class="span3">
+    <label>Password</label>
+    <% f.label :password %>
+    <%= f.password_field :password %></div>
+  </div>
+
+
+<div class="form-actions">
+<div class="row">
+ <div class="span1 offset1">
+ <%= link_to 'Atrás', usuarios_path, :class => "btn" %></div>
+ <div class="span1">
+ <button class="btn btn-primary" type="submit">Aceptar</button></div>
+</div>
+</div>
+
+
+<% end %>
+
+

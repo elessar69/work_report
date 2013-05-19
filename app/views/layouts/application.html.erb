@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WorkReport</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	
+    <img class="pull-left" src="/images/logo.jpg">
+
+<% if current_user %>
+
+<nav class='navbar'>
+ 	<div class='navbar-inner'>
+		<pl class='nav pull-right'>
+						
+			<li><%= link_to 'Jornadas', jornadas_path %></li>
+			
+			<% if current_user.derechos == true %>
+			
+			<li><%= link_to 'Usuarios', usuarios_path %></li>
+			<li><%= link_to 'Clientes', clientes_path %></li>
+					
+			<% end %>
+
+			<li><%= link_to "Editar mi usuario", edit_usuario_path(current_user) %></li>
+			<li><%= link_to "log out", logout_path %></li>
+			
+		</pl>
+	</div>
+</nav>
+
+
+<% else %>
+<nav class='navbar'>
+	<div class='navbar-inner'>
+		<ul class='nav pull-right'>
+			<h1>Iniciar sesión</h1>
+		</ul>
+	</div>
+</nav>
+<% end %>	
+	
+<%= yield %>
+
+</body>
+</html>
