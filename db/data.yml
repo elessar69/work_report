@@ -1,0 +1,225 @@
+
+---
+clientes:
+  columns:
+  - id
+  - nombre_cliente
+  - direccion_servicio
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Deutsche Bank
+    - '20968'
+    - '2013-04-28 15:11:51.059248'
+    - '2013-05-01 15:16:16.278128'
+  - - 2
+    - Bankinter
+    - '878788'
+    - '2013-04-28 16:24:53.055884'
+    - '2013-04-28 16:24:53.055884'
+  - - 4
+    - G&D
+    - '261789'
+    - '2013-05-01 14:40:42.215066'
+    - '2013-05-01 14:41:28.615720'
+  - - 5
+    - Grupo VIPS
+    - '345987'
+    - '2013-05-01 14:42:06.973914'
+    - '2013-05-01 14:42:06.973914'
+  - - 6
+    - Hotel Hilton
+    - '890321'
+    - '2013-05-01 14:43:03.307136'
+    - '2013-05-01 14:43:03.307136'
+  - - 7
+    - Sagrada Familia
+    - '123987'
+    - '2013-05-01 15:16:45.614806'
+    - '2013-05-01 15:16:45.614806'
+  - - 8
+    - Novotel
+    - '783262'
+    - '2013-05-01 15:27:06.116296'
+    - '2013-05-01 15:27:06.116296'
+
+---
+jornadas:
+  columns:
+  - id
+  - horas
+  - incidencia
+  - observaciones
+  - created_at
+  - updated_at
+  - usuario_id
+  - cliente_id
+  - pilar
+  - fecha
+  records: 
+  - - 1
+    - 8
+    - PD
+    - observacion prueba
+    - '2013-04-28 15:12:23.742118'
+    - '2013-04-29 20:43:32.324246'
+    - 1
+    - 1
+    - '312'
+    - '2013-04-29'
+  - - 3
+    - 6
+    - AN
+    - ''
+    - '2013-04-28 19:18:26.071653'
+    - '2013-04-29 20:43:45.685010'
+    - 7
+    - 1
+    - '310'
+    - '2013-04-29'
+  - - 4
+    - 8
+    - ''
+    - ''
+    - '2013-04-28 19:18:59.840585'
+    - '2013-05-01 16:49:04.758626'
+    - 7
+    - 1
+    - '312'
+    - '2013-04-29'
+  - - 6
+    - 8
+    - ''
+    - ''
+    - '2013-05-01 15:51:11.807985'
+    - '2013-05-01 15:51:11.807985'
+    - 1
+    - 4
+    - '312'
+    - '2013-05-01'
+  - - 7
+    - 7
+    - BA
+    - "juedos a c`sdlñkm ss x\r\nnasldc"
+    - '2013-05-01 16:32:27.061561'
+    - '2013-05-01 16:32:27.061561'
+    - 1
+    - 1
+    - '312'
+    - '2013-05-01'
+  - - 9
+    - 9
+    - ''
+    - ''
+    - '2013-05-13 22:21:31.978053'
+    - '2013-05-13 22:21:31.978053'
+    - 1
+    - 2
+    - '310'
+    - '2013-05-02'
+  - - 10
+    - 1
+    - ''
+    - ''
+    - '2013-05-13 22:21:55.277385'
+    - '2013-05-13 22:21:55.277385'
+    - 1
+    - 8
+    - '310'
+    - '2013-05-31'
+
+---
+usuarios:
+  columns:
+  - id
+  - username
+  - email
+  - crypted_password
+  - salt
+  - created_at
+  - updated_at
+  - nombre
+  - apellido1
+  - apellido2
+  - numero_empleado
+  - dni
+  - derechos
+  - unidad
+  - gestor
+  records: 
+  - - 1
+    - ralmirante
+    - r.almirante@es.issworld.com
+    - $2a$10$ZNA5G454Zh8qJwldLMroC.ehyEUjqSjVxGuObruotIcmpMkp/hKTq
+    - Bywy9pfGp8vyjBWstVpD
+    - '2013-04-28 13:30:46.039349'
+    - '2013-04-29 23:57:23.486511'
+    - Rubén
+    - Almirante
+    - Cejalvo
+    - '545'
+    - 36531236Z
+    - false
+    - B1701
+    - '06'
+  - - 7
+    - admin
+    - x@x.com
+    - $2a$10$4vj/FIgCK6o43btIZdfBOezQdZiywbJQPFoAvco5jZxZL6nB00czC
+    - ipC71uvXy2EpVR4ZMjCd
+    - '2013-04-28 17:31:19.940921'
+    - '2013-05-10 21:08:55.165858'
+    - Administrador
+    - de la
+    - aplicación
+    - '0'
+    - 000000X
+    - true
+    - '0'
+    - '0'
+  - - 10
+    - palmirante
+    - p@o.com
+    - $2a$10$pVZpAyJEICxaa/vi7.JEf.mHn8yX.FJWYzKfGALTxxsB.V3Kp31gq
+    - 4RDBGRx9Dc9tzcXwhKK7
+    - '2013-05-10 21:45:44.534226'
+    - '2013-05-10 21:45:44.534226'
+    - Pedro
+    - Almirante
+    - Gragera
+    - '6667'
+    - 43434543Z
+    - true
+    - B1701
+    - '06'
+  - - 11
+    - lpozo
+    - a@f.com
+    - $2a$10$Vo8R9pUgmIgX9hfKlMp8EekBLKSSEt44J7jDHzSMlTRItmBgYlY7K
+    - SxoboHGNrmp7ugEWWdw9
+    - '2013-05-10 21:57:31.708674'
+    - '2013-05-10 21:59:25.318172'
+    - Leire
+    - Pozo
+    - Salguero
+    - '33209'
+    - 93482013R
+    - true
+    - B1701
+    - '06'
+  - - 12
+    - arenart
+    - ''
+    - $2a$10$e2VKkszJEbhKidrvckBgt.1l4W9vyxZygN9lzJz6.UzVnc45qEXWq
+    - V9MzomscxcWN88LiXGeZ
+    - '2013-05-10 22:00:27.784745'
+    - '2013-05-10 22:09:58.307377'
+    - Albert
+    - Renart
+    - Lanau
+    - '12445'
+    - 098344345T
+    - true
+    - B1701
+    - '06'
