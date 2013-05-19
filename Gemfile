@@ -9,11 +9,13 @@ gem 'yaml_db'
 gem 'mysql'
 gem 'mysql2'
 gem 'heroku'
-
+gem 'pg'
+gem 'activerecord-postgresql-adapter'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+  
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
