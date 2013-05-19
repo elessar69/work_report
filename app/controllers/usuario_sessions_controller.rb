@@ -8,8 +8,7 @@ class UsuarioSessionsController < ApplicationController
 		if @usuario = login(params[:username],params[:password])
 			redirect_back_or_to(jornadas_path, message: "login OK")
 		else
-			redirect_to(usuarios_path, message: "login OK")
-			#render action: :new
+			render action: :new
 		end
 	end
 	def destroy
