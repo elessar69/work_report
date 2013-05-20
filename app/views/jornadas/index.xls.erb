@@ -11,6 +11,8 @@
     <th>Pilar</th>
     <th>Horas</th>
     <th>Incidencia</th>
+    <th>Registro creado</th>
+    <th>Registro actualizado</th>
   </tr>
 
 <% @jornadas.each do |jornada| %>
@@ -26,6 +28,8 @@
     <td><%= jornada.pilar %></td>
     <td><%= jornada.horas %></td>
     <td><%= jornada.incidencia %></td>
+    <td><%= jornada.created_at %></td>
+    <td><%= jornada.updated_at %></td>
   </tr>
 <% end %>
 </table>
