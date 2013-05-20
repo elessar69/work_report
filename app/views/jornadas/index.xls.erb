@@ -1,0 +1,33 @@
+<table>
+  <tr>
+    <th>Jornada ID</th>
+    <th>Fecha</th>
+    <th>Nombre</th>
+    <th>1r Apellido</th>
+    <th>2o Apellido</th>
+    <th>Numero Empleado</th>
+    <th>Cliente</th>
+    <th>DS</th>
+    <th>Pilar</th>
+    <th>Horas</th>
+    <th>Incidencia</th>
+  </tr>
+
+<% @jornadas.each do |jornada| %>
+  <tr>
+    <td><%= jornada.id %></td>
+    <td><%= jornada.fecha %></td>
+    <td><%= jornada.usuario.nombre %></td>
+    <td><%= jornada.usuario.apellido1 %></td>
+    <td><%= jornada.usuario.apellido2 %></td>
+    <td><%= jornada.usuario.numero_empleado %></td>
+    <td><%= jornada.cliente.nombre_cliente %></td>
+    <td><%= jornada.cliente.direccion_servicio %></td>
+    <td><%= jornada.pilar %></td>
+    <td><%= jornada.horas %></td>
+    <td><%= jornada.incidencia %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

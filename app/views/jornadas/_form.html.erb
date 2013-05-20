@@ -89,8 +89,8 @@ $(function($){
     <%= f.number_field :horas %></div>
     <div class="span3">
     <label>Incidencia</label>
-    <% incidencias = {'' => '', 'Baja Enfermedad' => 'BE', 'Baja Accidente' => 'BA', 'Permiso Pagado' => 'PP', 'Ausencia No Justificada' => 'AN', 'Permiso a Descontar' => 'PD' } %>
-    <% lista = incidencias.sort %>
+    <% incidencias = {'Hora Normal' => 'HN', 'Hora Festiva' => 'HF', 'Hora Nocturna' => 'HN', 'Hora Nocturna Festiva' => 'HNF', 'Baja Enfermedad' => 'BE', 'Baja Accidente' => 'BA', 'Vacaciones' => 'VA', 'Permiso Pagado' => 'PP', 'Ausencia No Justificada' => 'AN', 'Permiso a Descontar' => 'PD' } %>
+    <% lista = incidencias %>
     <%= f.select :incidencia, lista %></div>
   </div>
 

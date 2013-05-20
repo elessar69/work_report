@@ -6,6 +6,8 @@ class JornadasController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
+      format.xls
+      format.xml  { render :xml => @users }      
       format.json { render json: @jornadas }
     end
   end
