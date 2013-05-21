@@ -50,7 +50,12 @@
 
 </table>
 
-
+<div class="digg_pagination">
+    <div class="page_info">
+      <%= page_entries_info @jornadas %>
+    </div>
+    <%= will_paginate @jornadas, :container => false %>
+  </div>
 
 <div class="form-actions">
 <div class="row">
@@ -60,5 +65,7 @@
  <%= link_to 'Exportar BD', url_for(:format => 'xls'), :class => "btn btn-success" %></div>
 </div>
 </div>
+
+
 
 

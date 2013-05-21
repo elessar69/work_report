@@ -42,6 +42,13 @@
 <% end %>
 </table>
 
+<div class="digg_pagination">
+    <div class="page_info">
+      <%= page_entries_info @usuarios %>
+    </div>
+    <%= will_paginate @usuarios, :container => false %>
+ </div>
+
 
 <div class="form-actions">
 <div class="row">
