@@ -1,3 +1,4 @@
+
 <%= form_for(@cliente) do |f| %>
   <% if @cliente.errors.any? %>
     <div id="error_explanation">
@@ -18,6 +19,12 @@
 </blockquote>
 </div>
 
+<% if current_user.derechos == false %> 
+<div class="alert alert-error">
+  <strong>Alerta!</strong> No tiene derechos para acceder a esta función.
+</div>
+
+<% else %>
 
  <div class="row">   
     <div class="span3 offset1">
@@ -30,7 +37,6 @@
     <%= f.text_field :direccion_servicio %></div>
  </div>
 
-
 <div class="form-actions">
 <div class="row">
  <div class="span1 offset1">
@@ -39,5 +45,7 @@
  <button class="btn btn-primary" type="submit">Aceptar</button></div>
 </div>
 </div>
+
+<% end %>
 
 <% end %>

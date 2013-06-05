@@ -7,6 +7,14 @@
 </div>
 
 
+<% if current_user.derechos == false %> 
+<div class="alert alert-error">
+  <strong>Alerta!</strong> No tiene derechos para acceder a esta función.
+</div>
+
+<% else %>
+
+
 <table class="table table-striped table-bordered table-condensed">
   <tr>
     <th>Nombre del cliente</th>
@@ -45,4 +53,6 @@
  <%= link_to 'Nuevo cliente', new_cliente_path, :class => "btn" %></div>
 </div>
 </div>
+
+<% end %>
 

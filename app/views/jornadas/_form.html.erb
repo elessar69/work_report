@@ -67,7 +67,7 @@ $(function($){
     <% if current_user.derechos == true then %>
     <%= f.collection_select :usuario_id, Usuario.all, :id, :username, :prompt => 'Selecciona operario' %>
     <% else %> 
-    <%= f.collection_select :usuario_id, Usuario.all, :id, :username, :value => current_user.username ,  :html=>{:disabled=>true} %>
+    <%= f.collection_select :usuario_id, Usuario.all, :id, :username,  {}, {:disabled => "disabled"} %>
      <% end %></div>
     <div class="span3">
     <label>Cliente</label>

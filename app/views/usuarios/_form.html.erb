@@ -19,6 +19,13 @@
 </div>
 
 
+<% if current_user.derechos == false %> 
+<div class="alert alert-error">
+  <strong>Alerta!</strong> No tiene derechos para acceder a esta función.
+</div>
+
+<% else %>
+
 
   <div class="row">
     <div class="span3 offset1">
@@ -84,6 +91,7 @@
 </div>
 
 
+<% end %>
 <% end %>
 
 
