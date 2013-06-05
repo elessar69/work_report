@@ -1,3 +1,5 @@
+
+
 <table>
   <tr>
     <th>Jornada ID</th>
@@ -16,6 +18,7 @@
   </tr>
 
 <% @jornadas.each do |jornada| %>
+<% if current_user.derechos == true %>
   <tr>
     <td><%= jornada.id %></td>
     <td><%= jornada.fecha %></td>
@@ -31,6 +34,26 @@
     <td><%= jornada.created_at %></td>
     <td><%= jornada.updated_at %></td>
   </tr>
+
+<% else %>
+<% if jornada.usuario.username == current_user.username %>
+<tr>
+    <td><%= jornada.id %></td>
+    <td><%= jornada.fecha %></td>
+    <td><%= jornada.usuario.nombre %></td>
+    <td><%= jornada.usuario.apellido1 %></td>
+    <td><%= jornada.usuario.apellido2 %></td>
+    <td><%= jornada.usuario.numero_empleado %></td>
+    <td><%= jornada.cliente.nombre_cliente %></td>
+    <td><%= jornada.cliente.direccion_servicio %></td>
+    <td><%= jornada.pilar %></td>
+    <td><%= jornada.horas %></td>
+    <td><%= jornada.incidencia %></td>
+    <td><%= jornada.created_at %></td>
+    <td><%= jornada.updated_at %></td>
+  </tr>
+<% end %>
+<% end %>
 <% end %>
 </table>
 

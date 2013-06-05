@@ -2,13 +2,13 @@ class JornadasController < ApplicationController
   # GET /jornadas
   # GET /jornadas.json
   def index
-    
+
     @jornadas = Jornada.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xls
-      format.xml  { render :xml => @users }      
+      format.xls  { render :xls => @jornadas = Jornada.all }
+      format.xml  { render :xml => @jornadas }      
       format.json { render json: @jornadas }
     end
   end
